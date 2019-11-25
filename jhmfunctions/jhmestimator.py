@@ -5,11 +5,11 @@ from collections import OrderedDict
 from sklearn import linear_model, ensemble, metrics, neural_network
 from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from iotfunctions.base import BaseTransformer
-from .db import Database
-from .pipeline import CalcPipeline, PipelineExpression
-from .base import BaseRegressor, BaseEstimatorFunction, BaseClassifier
-from .bif import IoTAlertHighValue
-from .metadata import Model
+from iotfunctions.db import Database
+from iotfunctions.pipeline import CalcPipeline, PipelineExpression
+from iotfunctions.base import BaseRegressor, BaseEstimatorFunction, BaseClassifier
+from iotfunctions.bif import IoTAlertHighValue
+from iotfunctions.metadata import Model
 
 logger = logging.getLogger(__name__)
 
