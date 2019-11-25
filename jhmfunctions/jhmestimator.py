@@ -50,7 +50,8 @@ class JHMSimpleAnomaly(BaseRegressor):
         df = alert.execute(df)
         
         return df
-    @clasmethod
+    
+    @classmethod
     def build_ui(cls):
         #define arguments that behave as function inputs
         inputs = []
