@@ -36,7 +36,7 @@ class JHMSimpleAnomaly(BaseRegressor):
         #registration
         self.inputs = ['features','target']
         self.outputs = ['predictions','alerts']
-        self.contsants = ['threshold']
+        self.constants = ['threshold']
         
     def execute(self,df):
         
@@ -51,6 +51,36 @@ class JHMSimpleAnomaly(BaseRegressor):
         
         return df
 
+def build_ui(cls):
+        '''
+        Registration metadata
+        '''
+        # define arguments that behave as function inputs
+        inputs = []
+        inputs.append(UISingleItem(name='date_1',
+                                   datatype=dt.datetime,
+                                   required=False,
+                                   description=('Date data item. Use timestamp'
+                                                ' if no date specified')
+                                   )
+                      )
+        inputs.append(UISingle(name='ref_date',
+                               datatype=dt.datetime,
+                               description='Date value'
+                               )
+                      )
+        # define arguments that behave as function outputs
+        outputs = []
+        outputs.append(
+            UIFunctionOutSingle(
+                name='num_days',
+                datatype=float,
+                description='Number of days')
+        )
+
+        return (inputs, outputs)
+    
+    
 class JHMSimpleRegressor(BaseRegressor):
     '''
     Sample function that predicts the value of a continuous target variable using the selected list of features.
