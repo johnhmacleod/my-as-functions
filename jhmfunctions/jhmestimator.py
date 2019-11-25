@@ -57,17 +57,31 @@ class JHMSimpleAnomalyX(BaseRegressor):
         #define arguments that behave as function inputs
         inputs = []
         inputs.append(ui.UIMultiItem(
-                name = 'input_items',
+                name = 'features',
                 datatype=float,
-                description = "Data items adjust",
-                output_item = 'output_items',
-                is_output_datatype_derived = True)
+                description = "Data items to use as features",
+                      )        
+         inputs.append(ui.UISingleItem(
+                name = 'target',
+                datatype=float,
+                description = "Data item to use as target",
                       )        
         inputs.append(ui.UISingle(
-                name = 'factor',
+                name = 'threshold',
                 datatype=float)
                       )
         outputs = []
+        outputs.append(ui.UIFunctionOutMulti(
+                name = 'predictions',
+                datatype = float,
+                description = 'Output predictions'
+                       )
+        outputs.append(ui.UIFunctionOutMulti(
+                name = 'alerts',
+                datatype = bool,
+                description = 'Alert outputs'
+                       )
+                      
         return (inputs,outputs)
     
     
