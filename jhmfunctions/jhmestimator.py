@@ -59,12 +59,12 @@ class JHMSimpleAnomalyX(BaseRegressor):
         inputs.append(ui.UIMultiItem(
                 name = 'features',
                 datatype=float,
-                description = "Data items to use as features",
+                description = "Data items to use as features")
                       )        
          inputs.append(ui.UISingleItem(
                 name = 'target',
                 datatype=float,
-                description = "Data item to use as target",
+                description = "Data item to use as target")
                       )        
         inputs.append(ui.UISingle(
                 name = 'threshold',
@@ -74,12 +74,12 @@ class JHMSimpleAnomalyX(BaseRegressor):
         outputs.append(ui.UIFunctionOutMulti(
                 name = 'predictions',
                 datatype = float,
-                description = 'Output predictions'
+                description = 'Output predictions')
                        )
         outputs.append(ui.UIFunctionOutMulti(
                 name = 'alerts',
                 datatype = bool,
-                description = 'Alert outputs'
+                description = 'Alert outputs')
                        )
                       
         return (inputs,outputs)
