@@ -10,6 +10,7 @@ from iotfunctions.pipeline import CalcPipeline, PipelineExpression
 from iotfunctions.base import BaseRegressor, BaseEstimatorFunction, BaseClassifier
 from iotfunctions.bif import IoTAlertHighValue
 from iotfunctions.metadata import Model
+from iotfunctions import ui
 
 logger = logging.getLogger(__name__)
 
