@@ -55,8 +55,20 @@ class JHMSimpleAnomalyX(BaseRegressor):
     @classmethod
     def build_ui(cls):
         #define arguments that behave as function inputs
- 
-        return ([],[])
+ inputs = []
+        inputs.append(ui.UIMultiItem(
+                name = 'input_items',
+                datatype=float,
+                description = "Data items adjust",
+                output_item = 'output_items',
+                is_output_datatype_derived = True)
+                      )        
+        inputs.append(ui.UISingle(
+                name = 'factor',
+                datatype=float)
+                      )
+        outputs = []
+        return (inputs,outputs)
     
     
 class JHMSimpleRegressor(BaseRegressor):
