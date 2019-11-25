@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 PACKAGE_URL = 'git+https://github.com/johnhmacleod/my-as-functions.git@'
 
 
-class JHMSimpleAnomaly(BaseRegressor):
+class JHMSimpleAnomalyX(BaseRegressor):
     '''
     Sample function uses a regression model to predict the value of one or more output
     variables. It compares the actual value to the prediction and generates an alert 
