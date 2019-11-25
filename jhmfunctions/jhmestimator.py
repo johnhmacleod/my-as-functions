@@ -63,11 +63,6 @@ class JHMSimpleAnomalyX(BaseRegressor):
                 output_item = 'output_items',
                 is_output_datatype_derived = True)
                       )        
-        inputs.append(ui.UISingle(
-                name = 'threshold',
-                description = "Threshold above which an alert is generated",
-                datatype=float)
-                      )
         outputs = []
         return (inputs,outputs)
     
