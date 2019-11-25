@@ -51,34 +51,23 @@ class JHMSimpleAnomaly(BaseRegressor):
         
         return df
 
-def build_ui(cls):
-        '''
-        Registration metadata
-        '''
-        # define arguments that behave as function inputs
+    def build_ui(cls):
+        #define arguments that behave as function inputs
         inputs = []
-        inputs.append(UISingleItem(name='date_1',
-                                   datatype=dt.datetime,
-                                   required=False,
-                                   description=('Date data item. Use timestamp'
-                                                ' if no date specified')
-                                   )
-                      )
-        inputs.append(UISingle(name='ref_date',
-                               datatype=dt.datetime,
-                               description='Date value'
-                               )
-                      )
-        # define arguments that behave as function outputs
-        outputs = []
-        outputs.append(
-            UIFunctionOutSingle(
-                name='num_days',
+        inputs.append(ui.UIMultiItem(
+                name = 'input_items',
                 datatype=float,
-                description='Number of days')
-        )
-
-        return (inputs, outputs)
+                description = "Input features",
+                output_item = 'output_items',
+                is_output_datatype_derived = True)
+                      )        
+        inputs.append(ui.UISingle(
+                name = 'threshold',
+                description = "Threshold above which an alert is generated",
+                datatype=float)
+                      )
+        outputs = []
+        return (inputs,outputs)
     
     
 class JHMSimpleRegressor(BaseRegressor):
