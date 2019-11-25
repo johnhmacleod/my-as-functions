@@ -13,7 +13,7 @@ from .metadata import Model
 
 logger = logging.getLogger(__name__)
 
-PACKAGE_URL = 'git+https://github.com/johnhmacleod/jhmfunctions.git@'
+PACKAGE_URL = 'git+https://github.com/johnhmacleod/my-as-functions.git@'
 
 
 class JHMSimpleAnomaly(BaseRegressor):
