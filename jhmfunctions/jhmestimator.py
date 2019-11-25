@@ -61,7 +61,7 @@ class JHMSimpleAnomalyX(BaseRegressor):
                 datatype=float,
                 description = "Data items to use as features")
                       )        
-        inputs.append(ui.UIMultiItems(
+        inputs.append(ui.UIMultiItem(
                 name = 'targets',
                 datatype=float,
                 description = "Data items to use as targets")
