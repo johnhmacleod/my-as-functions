@@ -143,7 +143,9 @@ class JHMSimpleBinaryClassifier(BaseClassifier):
 
 
 class MultiplyByFactorJHM(BaseTransformer):
-
+    '''
+        Sample function to scale some inputs by a factor
+        '''
     def __init__(self, input_items, factor, output_items):
 
         self.input_items = input_items
